@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Ensure things scale correctly across varying devices. -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+
+    <!-- Bring in the bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <p style="font-weight: bold; text-align: center" class="h1">
+          Code Quiz
+        </p>
+      </header>
+
+      <!-- Bootstrap card element for start page -->
+      <div class="card" id="intro">
+        <div class="card-header">
+          <h4 class="card-title" style="text-align: center">
+            This challenge will test your coding knowledge.
+          </h4>
+        </div>
+        <div class="card-body text-center">
+          <button
+            id="generate"
+            class="btn btn-light"
+            onclick="startQuiz()"
+            style="background-color: red; color: white"
+            type="button"
+          >
+            Begin Quiz
+          </button>
+        </div>
+      </div>
+
+      <!-- Bootstrap card element for code quiz page -->
+      <div class="card" id="quizContainer">
+        <div class="card-header">
+          <h4 class="card-title" style="text-align: center">
+            Time Remaining: <span id="timerContainer"></span>
+          </h4>
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="quizQuestion"
+            class="form-control text-center"
+          ></textarea>
+        </div>
+        <div class="card-footer">
+          <button
+            id="btnA"
+            class="btn btn-light"
+            onclick="checkResponse('a')"
+            style="background-color: red; color: white"
+            type="button"
+          ></button>
+          <button
+            id="btnB"
+            class="btn btn-light"
+            onclick="checkResponse('b')"
+            style="background-color: red; color: white"
+            type="button"
+          ></button>
+          <button
+            id="btnC"
+            class="btn btn-light"
+            onclick="checkResponse('c')"
+            style="background-color: red; color: white"
+            type="button"
+          ></button>
+          <button
+            id="btnD"
+            class="btn btn-light"
+            onclick="checkResponse('d')"
+            style="background-color: red; color: white"
+            type="button"
+          ></button>
+        </div>
+        <div id="feedback" class="d-none">feedback</div>
+      </div>
+
+      <!-- Bootstrap card element for start page -->
+      <div class="card" id="quizComplete">
+        <div class="card-header">
+          <h4 class="card-title" style="text-align: center">
+            Congratulations for completing the quiz!
+          </h4>
+
+          <h5 id="finalScore" style="text-align: center"></h5>
+        </div>
+        <div class="card-body text-center">
+          <form>
+            <div class="form-group">
+              <label for="formGroupInitials">Initials</label>
+              <input
+                type="text"
+                class="form-control"
+                id="formGroupInitials"
+                placeholder="Please enter your initials"
+              />
+            </div>
+            <button
+              id="submitInitials"
+              class="btn btn-light"
+              onclick="saveScore()"
+              style="background-color: red; color: white"
+              type="button"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="assets/js/script.js"></script>
+
+    <!-- Bring in some scripts required to allow some Bootstrap components to work.-->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
